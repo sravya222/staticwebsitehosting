@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker rm -f static-website || true'
-                    sh 'docker run -d --name static-site -p 8080:80 static-website-image'
+                    sh 'docker run -d --name static-website -p 8080:80 static-website-image'
                 }
             }
         }
