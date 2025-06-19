@@ -10,14 +10,14 @@ pipeline {
 
     stage('Build Docker Image') {
       steps {
-        sh 'docker build -t static-site .'
+        sh 'docker build -t nginx .'
       }
     }
 
     stage('Run Docker Container') {
       steps {
         sh 'docker rm -f static-container || true'
-        sh 'docker run -d -p 8080:80 --name static-container static-site'
+        sh 'docker run -d -p 8080:80 --name static-container nginx'
       }
     }
   }
