@@ -17,7 +17,7 @@ pipeline {
     stage('Run Docker Container') {
       steps {
         sh 'docker rm -f static-container || true'
-        sh 'docker run -d -p 8080:80 --name static-container nginx'
+        sh 'docker run -d -p 9090:80 --name static-container nginx'
       }
     }
   }
